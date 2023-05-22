@@ -25,9 +25,13 @@ Make sure you have Docker installed on your machine. [Dockerhub](https://hub.doc
 
         docker pull weversonlemos/temperature-finder:latest
 
-2. Start container with image and api key
+2. Create docker network
 
-        docker run -p 8081:8081 --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
+        docker network create ct-apis
+
+3. Start container with image and api key
+
+        docker run -p 8081:8081 --network ct-apis --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
 
 3. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
 
