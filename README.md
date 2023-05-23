@@ -31,11 +31,11 @@ Make sure you have Docker installed on your machine. [Dockerhub](https://hub.doc
 
 3. Start container with image and api key
 
-        docker run -p 8080:8080 --network ct-apis --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
+        docker run -p 8081:8081 --network ct-apis --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
 
 3. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
 
-        curl --location 'http://localhost:8080/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
+        curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
 
 ⚠️ Still in development
 
