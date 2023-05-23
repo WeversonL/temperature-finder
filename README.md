@@ -37,49 +37,6 @@ Make sure you have Docker installed on your machine. [Dockerhub](https://hub.doc
 
         curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
 
-### Execute source code with maven
-
-Make sure you have Java and Maven installed on your machine.
-
-1. Clone the repository or download the source code
-
-        git clone https://github.com/WeversonL/temperature-finder.git
-        cd temperature-finder
-
-2. Download maven dependencies
-
-        mvn clean install
-
-3. Run the Spring Boot project
-
-        mvn spring-boot:run
-
-4. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
-
-        curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
-
-### Compile source code with maven
-
-Make sure you have Java and Maven installed on your machine.
-
-1. Clone the repository or download the source code
-
-        git clone https://github.com/WeversonL/temperature-finder.git
-        cd temperature-finder
-
-2. Download maven dependencies and build package
-
-        mvn clean install
-        mvn clean package
-
-3. Run the Jar File
-
-        java -jar target/app.jar
-
-4. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
-
-        curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
-
 ⚠️ Still in development
 
 ## License
