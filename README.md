@@ -15,11 +15,26 @@ API developed for consumption of OpenWeather API's to search weather infos. Made
         export API_KEY=ABCDEFG
         mvn spring-boot:run 
 
-3. [Follow the steps in this repository](https://github.com/WeversonL/geocode-finder), as the API's were built in separate ways
+### Running the application with docker-compose
+
+Make sure you have [Docker](https://docs.docker.com/engine/install/) and [Docker-compose](https://docs.docker.com/compose/) installed on your machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
+
+1. Clone the repository or download the source code
+
+        git clone https://github.com/WeversonL/temperature-finder.git
+        cd temperature-finder
+
+2. Start with docker-compose
+
+        docker-compose up -d
+
+3. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
+
+        curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
 
 ### Running the application with Docker
 
-Make sure you have Docker installed on your machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
+Make sure you have [Docker](https://docs.docker.com/engine/install/) installed on your machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
 
 1. Clone the image
 
@@ -29,11 +44,13 @@ Make sure you have Docker installed on your machine. [Dockerhub](https://hub.doc
 
         docker network create ct-apis
 
-3. Start container with image and api key
+3. [Follow the steps in this repository](https://github.com/WeversonL/geocode-finder), as the API's were built in separate ways
+
+4. Start container with image and api key
 
         docker run -p 8081:8081 --network ct-apis --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
 
-3. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
+5. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the program is already in charge of doing this
 
         curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
 

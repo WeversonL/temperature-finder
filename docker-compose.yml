@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  temperature:
+    depends_on: 
+      - geocode
+    build: .
+    container_name: temperature-finder
+    networks:
+      - ct-apis
+    ports:
+      - 8081:8081
+    environment: 
+      API_KEY: ${API_KEY_TEMPERATURE} 
+
+  geocode: 
+    image: weversonlemos/geocode-finder
+    container_name: geocode-finder
+    networks:
+      - ct-apis
+    ports: 
+      - 8080:8080
+    environment: 
+      API_KEY: ${API_KEY_GEOCODE} 
+
+networks:
+  ct-apis:
+    driver: bridge

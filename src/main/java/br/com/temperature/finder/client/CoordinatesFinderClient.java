@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "CoordinatesClient", url = "${app.coordinates-api}")
 public interface CoordinatesFinderClient {
 
-    @GetMapping
+    @GetMapping(consumes = "application/json")
     CoordinatesResponse getCoordinates(@RequestParam("address") String address);
 
 }

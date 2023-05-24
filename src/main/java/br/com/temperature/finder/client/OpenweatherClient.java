@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "Openweather", url = "${app.openweather-api}?appid=${app.openweather-key}&lang=pt_br&units=metric")
 public interface OpenweatherClient {
 
-    @GetMapping
+    @GetMapping(consumes = "application/json")
     OpenweatherResponse getTemperature(
             @RequestParam("lat") Double lat,
             @RequestParam("lon") Double lon
