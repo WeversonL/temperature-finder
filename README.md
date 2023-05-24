@@ -10,7 +10,7 @@ API developed for consumption of OpenWeather API's to search weather infos. Made
 
 1. To use, a API Key provided by OpenWeather is required to consume APIs.  [Follow this step by step.](https://openweathermap.org/api/one-call-3) or check the [documentation about](https://openweathermap.org/appid)
 
-2. When running the API, be sure to export your environment variable with the Key API, or change the source code for that. An example of exporting the Key API and executing the project on your shell would be:
+2. When running the API, be sure to export your environment variable with the API KEY, or change the source code for that. An example of exporting the API KEY and executing the project on your shell would be:
 
         export API_KEY=ABCDEFG
         mvn spring-boot:run 
@@ -24,7 +24,12 @@ Make sure you have [Docker](https://docs.docker.com/engine/install/) and [Docker
         git clone https://github.com/WeversonL/temperature-finder.git
         cd temperature-finder
 
-2. Start with docker-compose
+2. In the docker-compose file, there are two environment variables [API_KEY_TEMPERATURE, API_KEY_GEOCODE]. As stated above, export these variables to run compose
+
+        export API_KEY_TEMPERATURE=ABCDEFG
+        export API_KEY_GEOCODE=ABCDEFG
+
+3. Start with docker-compose
 
         docker-compose up -d
 
@@ -46,7 +51,7 @@ Make sure you have [Docker](https://docs.docker.com/engine/install/) installed o
 
 3. [Follow the steps in this repository](https://github.com/WeversonL/geocode-finder), as the API's were built in separate ways
 
-4. Start container with image and api key
+4. Start container with image and API KEY
 
         docker run -p 8081:8081 --network ct-apis --name temperature-finder -e API_KEY=YOUR_API_KEY weversonlemos/temperature-finder:latest
 
