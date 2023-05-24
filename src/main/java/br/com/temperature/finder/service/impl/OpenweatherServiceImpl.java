@@ -20,7 +20,7 @@ public class OpenweatherServiceImpl implements OpenweatherService {
         try {
             return openweatherClient.getTemperature(latitude, longitude);
         } catch (Exception e) {
-            log.error("Error running the service OpenweatherService -> {0}", e);
+            log.error("Error running the service OpenweatherService -> ", e);
             throw e;
         }
     }

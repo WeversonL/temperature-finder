@@ -10,8 +10,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
-
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -19,8 +17,6 @@ public class TemperatureServiceImpl implements TemperatureService {
 
     private final CoordinatesService coordinatesService;
     private final OpenweatherService openweatherService;
-
-    DecimalFormat df = new DecimalFormat("#.0");
 
     @Override
     public Response processAndGetTemperature(String address) {
@@ -45,7 +41,7 @@ public class TemperatureServiceImpl implements TemperatureService {
                     .build();
 
         } catch (Exception e) {
-            log.error("Error running the service -> {0}", e);
+            log.error("Error running the service -> ", e);
             throw e;
         }
 

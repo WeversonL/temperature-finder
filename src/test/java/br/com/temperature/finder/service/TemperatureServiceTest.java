@@ -2,7 +2,6 @@ package br.com.temperature.finder.service;
 
 import br.com.temperature.finder.model.*;
 import br.com.temperature.finder.service.impl.TemperatureServiceImpl;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

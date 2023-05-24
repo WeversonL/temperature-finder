@@ -19,7 +19,7 @@ public class CoordinatesServiceImpl implements CoordinatesService {
         try {
             return coordinatesFinderClient.getCoordinates(address);
         } catch (Exception e) {
-            log.error("Error running the service CoordinatesService -> {0}", e);
+            log.error("Error running the service CoordinatesService -> ", e);
             throw e;
         }
 
