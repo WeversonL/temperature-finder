@@ -3,27 +3,25 @@
 ### Java to consumes OpenWeather API's
 
 API developed for consumption of OpenWeather API's to search weather infos. Made for study and practice purposes! And of
-course, to help me with daily research!
+course, to help me with daily research! [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
 
-## Get Started
+## Requirements
 
-### Setting up environment
-
-1. To use, a API Key provided by OpenWeather is required to consume
+1. [Docker](https://docs.docker.com/engine/install/)
+2. [Docker-compose](https://docs.docker.com/compose/)
+3. To use, a API Key provided by OpenWeather is required to consume
    APIs.  [Follow this step by step.](https://openweathermap.org/api/one-call-3) or check
    the [documentation about](https://openweathermap.org/appid)
 
-2. When running the API, be sure to export your environment variable with the API KEY, or change the source code for
+4. When running the API, be sure to export your environment variable with the API KEY, or change the source code for
    that. An example of exporting the API KEY and executing the project on your shell would be:
 
         export API_KEY=ABCDEFG
         mvn spring-boot:run 
 
-### Running the application with docker-compose
+## Get Started
 
-Make sure you have [Docker](https://docs.docker.com/engine/install/)
-and [Docker-compose](https://docs.docker.com/compose/) installed on your
-machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
+### Running the application with docker-compose
 
 1. Clone the repository or download the source code
 
@@ -40,15 +38,12 @@ machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
 
         docker-compose up -d
 
-3. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the
+4. To obtain the temperature of an address, below is an example curl. The string need not be coded for the search, the
    program is already in charge of doing this
 
         curl --location 'http://localhost:8081/temperature/find?address=Morumbi%2C%20S%C3%A3o%20Paulo'
 
 ### Running the application with Docker
-
-Make sure you have [Docker](https://docs.docker.com/engine/install/) installed on your
-machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/temperature-finder)
 
 1. Clone the image
 
